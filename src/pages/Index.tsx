@@ -61,7 +61,7 @@ const Index = () => {
             type="text"
             value={codeword}
             onChange={(e) => setCodeword(e.target.value)}
-            className="w-full text-center text-3xl py-4 px-6 rounded-md mb-6 neon-input uppercase tracking-wider"
+            className="w-full text-center text-3xl py-4 px-6 rounded-md mb-6 neon-input uppercase tracking-wider text-neonPink placeholder-neonPink/70"
             placeholder="ВВЕДИ ШИФР-СЛОВО"
           />
           
