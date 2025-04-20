@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -6,7 +7,7 @@ export default {
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}"
 	],
 	prefix: "",
 	theme: {
@@ -24,6 +25,9 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				neonPink: '#ff6ec7',
+				neonPurple: '#8f71ff',
+				darkBg: '#0f0f13',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -70,25 +74,42 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'pulse-neon': {
+					'0%, 100%': { 
+						textShadow: '0 0 7px #ff6ec7, 0 0 10px #ff6ec7, 0 0 21px #ff6ec7',
+						boxShadow: '0 0 7px #ff6ec7, 0 0 10px #ff6ec7, 0 0 21px #ff6ec7'
 					},
-					to: {
-						height: '0'
+					'50%': { 
+						textShadow: '0 0 20px #ff6ec7, 0 0 30px #ff6ec7, 0 0 40px #ff6ec7',
+						boxShadow: '0 0 20px #ff6ec7, 0 0 30px #ff6ec7, 0 0 40px #ff6ec7'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'float-delayed': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-15px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-neon': 'pulse-neon 2s infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'float-delayed': 'float-delayed 7s ease-in-out infinite'
+			},
+			fontFamily: {
+				'neon': ['"Press Start 2P"', 'cursive'],
+				'heading': ['"Righteous"', 'cursive']
 			}
 		}
 	},
